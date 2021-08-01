@@ -12,10 +12,25 @@
 
     <!icons for buttonsa from google>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <script src="./js/main.js" defer></script>
 
 </head>
 <body>
-    <div id="app"></div>
-    <script src="./js/main.js" type="module"></script>
+    <div class="board" id="board">
+        <div class="cell blue" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell yellow" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+    <div class="winning-message">
+        <div data-winning-message-text></div>
+        <button id="restartButton">restart</button>
+        <button id="socialShare">Post win To Social?</button>
+    </div>
 </body>
 </html>
