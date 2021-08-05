@@ -96,6 +96,15 @@ body {
   padding: 0.25em 0.5em;
   cursor: pointer;
 }
+.winning-message button {
+  font-size: 3rem;
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  margin: 1rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
 
 .winning-message button:hover {
   background-color: black;
@@ -105,4 +114,44 @@ body {
 
 .winning-message.show {
   display: flex;
+}
+
+.share {
+  z-index: -1;
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: fit-content;
+  width: 20rem;
+  background: #f2f2f2;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+  justify-content: center;
+}
+
+.textbox {
+  font-size: 30px;
+  width: auto;
+  height: fit-content;
+  margin: 10px;
+}
+
+.link-box {
+  width: auto;
+  height: auto;
+  margin: 10px;
+  display: flex;
+}
+
+.fb-share-button {
+  margin-left: 15px;
+}
+
+.share.show {
+  z-index: 1;
+  display: inline;
 }
