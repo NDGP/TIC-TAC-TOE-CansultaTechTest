@@ -22,15 +22,6 @@ const twiterScript = document.getElementById('twiterScript')
 shareButton.addEventListener('click', shareClick)
 restartButton.addEventListener('click', startGame);
 
-let shareElement = `<div class='share show' id='shareBlock'>
-<div class="textbox">Thanks For Playing!</div>
-<div class="link-box">
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="truen">Tweet</a>
-    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-    <script id="twiterScript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="L5CLMsws"></script>
-</div>
-</div>`
 
 
 let yellowTurn;
@@ -47,6 +38,7 @@ function startGame() {
     })
     setBoardHoverClass();
     winningMessageElement.classList.remove('show');
+    shareButton.classList.add('show')
 }
 
 
@@ -94,6 +86,7 @@ function checkWin(currentClass) {
 function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText = "Draw!"
+        shareButton.classList.remove('show')
     } else {
         winningMessageTextElement.innerText = `${yellowTurn ? 'Yellow' : 'Blue'} Wins!`
     }
@@ -109,11 +102,9 @@ function isDraw() {
 
 
 function shareClick() {
-    fetch('https://platform.twitter.com/widgets.js').then(response => {
-        console.log(response)
         winningMessageElement.classList.remove('show')
         window.location.replace('https://twitter.com/share?ref_src=twsrc%5Etfw')
-    })
+    
 }
 
 

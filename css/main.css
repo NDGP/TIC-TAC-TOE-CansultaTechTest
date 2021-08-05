@@ -116,6 +116,14 @@ body {
   display: flex;
 }
 
+.big-share {
+  display: none;
+}
+
+.big-share.show {
+  display: inline;
+}
+
 .share {
   z-index: -1;
   display: none;
